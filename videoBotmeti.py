@@ -1,16 +1,7 @@
-import os
-
-# Manuelle Installation von ffmpeg (wird nur in der Streamlit Cloud benötigt)
-os.system('apt-get update')
-os.system('apt-get install -y ffmpeg')
-
-# Importiere MoviePy nach der Installation von ffmpeg
+import streamlit as st
 from moviepy.editor import VideoFileClip, vfx
 from moviepy.video.fx.all import margin, rotate, speedx
 import numpy as np
-
-# Dein Streamlit-Code und andere Logik hier
-import streamlit as st
 
 st.title("Video Bot App")
 
