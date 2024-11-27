@@ -1,3 +1,29 @@
+import os
+
+# Manuelle Installation von ffmpeg (wird nur in der Streamlit Cloud benötigt)
+os.system('apt-get update')
+os.system('apt-get install -y ffmpeg')
+
+# Importiere MoviePy nach der Installation von ffmpeg
+from moviepy.editor import VideoFileClip, vfx
+from moviepy.video.fx.all import margin, rotate, speedx
+import numpy as np
+
+# Dein Streamlit-Code und andere Logik hier
+import streamlit as st
+
+st.title("Video Bot App")
+
+# Beispiel: Verarbeitung eines Videos
+video_path = "dein_video.mp4"
+clip = VideoFileClip(video_path)
+
+# Beispiel für einen einfachen Effekt: Helligkeit ändern
+clip = clip.fx(vfx.colorx, 1.2)  # Steigerung der Helligkeit um 20%
+
+# Zeige das Video auf Streamlit an
+st.video(clip.ipython_display(), format="video/mp4")
+
 import streamlit as st
 from moviepy.editor import VideoFileClip, vfx
 from moviepy.video.fx.all import margin, rotate, speedx
